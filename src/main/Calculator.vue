@@ -1,31 +1,31 @@
 
 <template>
   <div class="calculator">
-    <Display  :value="displayValue"/>
-    <Button label="AC" triple @onClick="clearMemory"/>
-    <Button label="/" operation @onClick="setOperation"/>
-    <Button label="7" @onClick="addDigit" />
-    <Button label="8" @onClick="addDigit"/>
-    <Button label="9" @onClick="addDigit"/>
-    <Button label="*" operation @onClick="setOperation"/>
-    <Button label="4" @onClick="addDigit"/>
-    <Button label="5" @onClick="addDigit"/>
-    <Button label="6" @onClick="addDigit"/>
-    <Button label="-" operation @onClick="setOperation"/>
-    <Button label="1" @onClick="addDigit"/>
-    <Button label="2" @onClick="addDigit"/>
-    <Button label="3" @onClick="addDigit"/>
-    <Button label="+" operation @onClick="setOperation"/>
-    <Button label="0" double @onClick="addDigit"/>
-    <Button label="." @onClick="addDigit"/>
-    <Button label="=" operation @onClick="setOperation" />    
+    <TodoDisplay  :value="displayValue"/>
+    <TodoButton label="AC" triple @onClick="clearMemory"/>
+    <TodoButton label="/" operation @onClick="setOperation"/>
+    <TodoButton label="7" @onClick="addDigit" />
+    <TodoButton label="8" @onClick="addDigit"/>
+    <TodoButton label="9" @onClick="addDigit"/>
+    <TodoButton label="*" operation @onClick="setOperation"/>
+    <TodoButton label="4" @onClick="addDigit"/>
+    <TodoButton label="5" @onClick="addDigit"/>
+    <TodoButton label="6" @onClick="addDigit"/>
+    <TodoButton label="-" operation @onClick="setOperation"/>
+    <TodoButton label="1" @onClick="addDigit"/>
+    <TodoButton label="2" @onClick="addDigit"/>
+    <TodoButton label="3" @onClick="addDigit"/>
+    <TodoButton label="+" operation @onClick="setOperation"/>
+    <TodoButton label="0" double @onClick="addDigit"/>
+    <TodoButton label="." @onClick="addDigit"/>
+    <TodoButton label="=" operation @onClick="setOperation" />    
   </div>
 </template>
 
 <script>
 /* eslint-disable */
-import Button from "../components/Button"
-import Display from "../components/Display"
+import TodoButton from "../components/TodoButton"
+import TodoDisplay from "../components/TodoDisplay"
 
 export default {
   data:function(){
@@ -37,7 +37,7 @@ export default {
       current: 0
     }
   },
-    components: { Button, Display },
+    components: { TodoButton, TodoDisplay },
     methods:{
       clearMemory(){
         //essa funcao faz o ojeto voltar ao estado incial
@@ -45,7 +45,7 @@ export default {
         Object.assign(this.$data, this.$options.data())
       },
 
-      setOperation(opreation){
+      setOperation(operation){
         if(this.current === 0){
           this.operation = operation
           this.current = 1
