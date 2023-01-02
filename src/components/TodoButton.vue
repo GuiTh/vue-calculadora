@@ -1,19 +1,18 @@
 <template>
-  <button class="button"
-  @click="$emit('onCalcButtonCLick', label)"
-  :class="{double,triple,operation}">
- {{label}}
-  </button>
+    <button class="button"
+    @click="$emit('onClick', label)"
+    :class="{double, triple, operation}">
+  {{label}}
+    </button>
 </template>
 
 <script>
 export default {
   props: {
-    label:{},
-    operation:{type:Boolean},
-    double:{type:Boolean},
-    triple:{type:Boolean}
-
+    label: {},
+    operation: { type: Boolean },
+    double: { type: Boolean },
+    triple: { type: Boolean }
   }
 }
 </script>
